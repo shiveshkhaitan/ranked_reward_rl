@@ -1,0 +1,12 @@
+name: ranked_reward
+channels:
+  - defaults
+dependencies:
+  - matplotlib==3.3.4
+  - numpy==1.20.3
+  - pip
+  - pytorch
+  - pip:
+    - gym==0.21.0
+    - ray[rllib]==2.2.0
+    - stable_baselines3==1.5.0
