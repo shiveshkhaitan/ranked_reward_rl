@@ -14,7 +14,7 @@ def train():
 
     mcts_config = {
                 "puct_coefficient": 1.0,
-                "num_simulations": 30,
+                "num_simulations": 300,
                 "temperature": 1.5,
                 "dirichlet_epsilon": 0.25,
                 "dirichlet_noise": 0.03,
@@ -36,15 +36,13 @@ def train():
                 alpha_zero.AlphaZeroConfig()
                 .environment(env='Bpp-v1', env_config=env_config)
                 .training(model={"custom_model": Agent},
-                          train_batch_size=3,
                           mcts_config=mcts_config,
-                          num_steps_sampled_before_learning_starts=1,
                           num_sgd_iter=10,
                           ranked_rewards=ranked_rewards)
                 .rollouts(num_rollout_workers=16)
              )
 
-    num_iterations = 5
+    num_iterations = 50
 
     algo = config.build()
 

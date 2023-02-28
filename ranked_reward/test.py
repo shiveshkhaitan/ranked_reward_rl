@@ -22,7 +22,7 @@ def evaluate():
 
     mcts_config = {
                 "puct_coefficient": 1.0,
-                "num_simulations": 3,
+                "num_simulations": 300,
                 "temperature": 1.5,
                 "dirichlet_epsilon": 0.25,
                 "dirichlet_noise": 0.03,
